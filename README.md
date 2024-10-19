@@ -6,7 +6,7 @@ The API endpoint is "/water-jug-calculator", an HTTP POST operation. It takes a 
 
 ## Algorithm
 
-A BFS algorithm is used for this calculation, it guarantees finding the optimal solution with O(n*m) time complexity. 
+A BFS algorithm is used for this calculation, it guarantees finding the optimal solution with O(n*m) time complexity, with n and m representing the jug capacities. 
 
 ## Setup
 
