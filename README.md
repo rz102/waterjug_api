@@ -1,6 +1,6 @@
 ## Overview
 
-This REST API was developed with Python, FastAPI, and Pydantic(for validation and error handling) to solve the [water jug problem](https://www.geeksforgeeks.org/two-water-jug-puzzle/). It provides the ideal solution, step-by-step, as a JSON response. 
+This REST API was developed with Python, FastAPI, and Pydantic to solve the [water jug problem](https://www.geeksforgeeks.org/two-water-jug-puzzle/). It provides the ideal solution, step-by-step, as a JSON response. 
 
 The API endpoint is "/water-jug-calculator", an HTTP POST operation. It takes a JSON as a request parameter and returns a JSON object with an array of objects, each object in the array representing a step. 
 
