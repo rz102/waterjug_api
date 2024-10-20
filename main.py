@@ -8,9 +8,8 @@ class Input(BaseModel):
     y_capacity:PositiveInt
     z_amount_wanted:PositiveInt
 
-app = FastAPI()
-
 # API endpoint
+app = FastAPI()
 @app.post("/water-jug-calculator")
 def get_solution(input: Input):
     global jug1
@@ -20,25 +19,6 @@ def get_solution(input: Input):
     jug2 = input.y_capacity
     goal = input.z_amount_wanted
     return JSONResponse(content = {"solution": water_jug_solver()})
-
-#Helper function
-def is_solved(state):
-    return goal in state
-
-#Helper function
-def get_neighbors(state):
-    a_to_b = min(state[0], jug2 - state[1])
-    b_to_a = min(state[1], jug1 - state[0])
-    return [
-        ((jug1, state[1]), f'Fill bucket X'),
-        ((state[0], jug2), f'Fill bucket Y'),
-        ((0, state[1]), f'Empty bucket X'),
-        ((state[0], 0), f'Empty bucket Y'),
-        ((state[0] - a_to_b, state[1] + a_to_b),
-         f'Transfer from bucket X to bucket Y'),
-        ((state[0] + b_to_a, state[1] - b_to_a),
-         f'Transfer from bucket Y to bucket X')
-    ]
 
 # Main algorithm
 # Time complexity O(n*m)
@@ -83,3 +63,22 @@ def water_jug_solver():
                 i += 1
 
     return(instructions)
+
+#Helper function
+def is_solved(state):
+    return goal in state
+
+#Helper function
+def get_neighbors(state):
+    a_to_b = min(state[0], jug2 - state[1])
+    b_to_a = min(state[1], jug1 - state[0])
+    return [
+        ((jug1, state[1]), f'Fill bucket X'),
+        ((state[0], jug2), f'Fill bucket Y'),
+        ((0, state[1]), f'Empty bucket X'),
+        ((state[0], 0), f'Empty bucket Y'),
+        ((state[0] - a_to_b, state[1] + a_to_b),
+         f'Transfer from bucket X to bucket Y'),
+        ((state[0] + b_to_a, state[1] - b_to_a),
+         f'Transfer from bucket Y to bucket X')
+    ]
