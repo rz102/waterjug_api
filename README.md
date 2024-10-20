@@ -10,15 +10,15 @@ A BFS algorithm is used for this calculation, it guarantees finding the optimal 
 
 ## Setup
 
-Make sure you have Python, pip, and a suitable IDE already installed. 
+Make sure you have Python installed. 
 
-Clone this repository and add it to your IDE. Then install the dependencies:
+Clone this repository and add it to your local. Then install the dependencies:
 ```
 pip install pydantic
 pip install "fastapi[standard]"
 ```
 
-Then run the app in the IDE terminal with 
+Then navigate to the project folder and run the app from the command line: 
 ```
 fastapi dev main.py
 ```
