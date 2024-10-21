@@ -18,7 +18,7 @@ def test_API():
         "solution":
         [
             {
-                "step": 2,
+                "step": 1,
                 "bucketX": 2,
                 "bucketY": 0,
                 "action": "Fill bucket X"
