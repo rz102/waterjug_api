@@ -25,6 +25,19 @@ fastapi dev main.py
 
 The terminal output will provide a link to the swagger docs(in my case it was: http://localhost:8000/docs), use them to test the API endpoint using the "Try it out" button
 
+## Testing
+
+Install pytest
+
+```
+pip install pytest
+```
+
+Then simply run the tests with 
+```
+pytest
+```
+
 # Request and response formats, with samples:
 ## Solution found
 ### A
